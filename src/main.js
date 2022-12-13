@@ -1,6 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import Vue, { createApp} from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import vuetify from "./plugins/vuetify";
+import { loadFonts } from "./plugins/webfontloader";
+import ToastPlugin from "vue-toast-notification";
+// Import one of the available themes
 
-createApp(App).use(store).use(router).mount('#app')
+loadFonts();
+
+createApp(App).use(router).use(store).use(vuetify).mount("#app");
+Vue.use(ToastPlugin);
